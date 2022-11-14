@@ -10,20 +10,10 @@ def home():
     return render_template("home.html", tasks=db)
 
 
-@app.route("/task/<int:index>")
-def task_view(index):
-    try:
-        return render_template(
-            "task.html", task=db[index], index=index, max_index=len(db) - 1
-        )
-    except IndexError:
-        abort(404)
-
-
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     if request.method == "POST":
-        task = {"name": request.form["name"]}
+        task = {"name": request.form["name"], "date": request.form["date"]}
         db.append(task)
         save_db()
         return redirect(url_for("home", tasks=db))

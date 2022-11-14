@@ -4,10 +4,17 @@ content %}
 <form method="post">
   <label>
     Task Name:
-    <input type="text" name="name" />
+    <input type="text" name="name" required />
   </label>
   <br />
   <br />
-  <button type="submit">Submit</button>
+  <label>
+    Task Date:
+    <input type="date" name="date" required />
+  </label>
+  <br />
+  <br />
+        <button><a href="{{ url_for("home") }}">Cancel</a></button>
+        <button type="submit">Submit</button>
 </form>
 {% endblock %}

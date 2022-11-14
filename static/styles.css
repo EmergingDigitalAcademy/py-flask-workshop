@@ -1,0 +1,49 @@
+html, body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: ghostwhite;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    width: 25vw;
+}
+
+h1 {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+table {
+    margin: 2.5rem auto auto;
+    border-collapse: collapse;
+    border-radius: 5px;
+    border-style: hidden; /* hide standard table (collapsed) border */
+    box-shadow: 0 0 0 2px black; /* this draws the table border  */
+    overflow: hidden;
+}
+
+thead {
+    background-color: #26275f;
+    color: #f3ebf4;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: .5rem 5rem;
+}
+
+tr:nth-child(even) {
+    background-color: #767597;
+    color: #f3ebf4;
+}
+
+
