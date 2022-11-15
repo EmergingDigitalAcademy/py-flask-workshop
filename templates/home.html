@@ -1,9 +1,12 @@
+{#  We are "extending" the content from the "base.html" file and combining it with the content from this file  #}
+
 {% extends "base.html" %}{% block title %} Welcome {% endblock %}{% block
 content %}
     <img src="../static/eda-logo-purple.png" alt=""/>
     <br>
     <h1>EDA Python and Flask Workshop</h1>
     <br>
+    {#  We can use the same url_for function to generate a url for the template that we are trying to render  #}
     <button><a href="{{ url_for("add_task") }}">Add Task</a></button>
         <table>
             <thead>
@@ -14,11 +17,15 @@ content %}
                 </tr>
             </thead>
             <tbody>
+                {#  Loop over the tasks object and render a table row with the name, date, and a delete button #}
                 {% for task in tasks %}
                     <tr>
                         <td>{{ task.name }}</td>
                         <td>{{ task.date }}</td>
                         <td>
+
+                                                {#  loop.index0 is a Jinja variable that specifies what position
+                                                    the current index is at starting at index 0  #}
                             <button><a href="{{ url_for("remove_task", index = loop.index0) }}">Delete Task</a></button>
                         </td>
                     </tr>
