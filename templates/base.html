@@ -1,0 +1,29 @@
+{# A base template for our HTML templates. Every html file shares the
+information in the "Head" #}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for("static", filename="styles.css")
+    }}"> {# The block title element is part of Jinja templating where we are
+    extend the base HTML template to other HTML files and fill in the title with
+    content from the other file. block title and endblock will be replaced with
+    content we specify in the other HTML files #}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    {# Similar to block title, block content and endblock will be replaced by
+    the HTML specified in the files we are extending this template to #} {%
+    block content %}{% endblock %}
+  </body>
+</html>
