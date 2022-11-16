@@ -2,6 +2,8 @@
 
 # Python and Flask Workshop
 
+## [Workshop Video](https://vimeo.com/771394146/cc7597882b)
+
 ## Welcome!
 
 Hello, and welcome to the Emerging Digital Academy: Python and Flask Workshop. Today we will be going over the basics of creating an MVT API with Python and Flask!
